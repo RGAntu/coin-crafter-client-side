@@ -5,9 +5,9 @@ import { FaFacebook, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer class="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
-      <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
-        <div class="sm:flex sm:items-center sm:justify-between">
+    <footer className="bg-white rounded-lg shadow-sm dark:bg-gray-900 m-4">
+      <div className="w-full max-w-screen-xl mx-auto p-4 md:py-8">
+        <div className="sm:flex sm:items-center sm:justify-between">
           <CoinCrafterLogo></CoinCrafterLogo>
           <div className="flex gap-5">
             <Link
@@ -30,7 +30,7 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <p className="text-white text-center">
           {" "}
           © <span className="hover:text-primary">CoinCrafter</span>{" "}
