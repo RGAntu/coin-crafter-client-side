@@ -3,6 +3,7 @@ import HeroCarousel from '../HeroCarousel/HeroCarousel';
 import TestimonialSlider from '../TestimonialSlider/TestimonialSlider';
 import WhyChoose from '../WhyChoose/WhyChoose';
 import PlatformStats from '../PlatformStats/PlatformStats';
+import FAQ from '../FAQ/FAQ';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <TestimonialSlider></TestimonialSlider>
             <WhyChoose></WhyChoose>
             <PlatformStats></PlatformStats>
+            <FAQ></FAQ>
             </div>
         </div>
     );
