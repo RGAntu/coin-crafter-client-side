@@ -7,7 +7,7 @@ const CoinCrafterLogo = () => {
       <div className="flex items-center">
         <img
           className="w-15 h-15 object-contain"
-          src="https://i.ibb.co/1DHKLpD/coin-crafter.png"
+          src="https://i.ibb.co/nqdPk3Gn/coin-crafter.png"
           alt="logo"
         />
         <p className="text-3xl -ml-2 font-bold text-primary ">Coin<span className="text-secondary">C</span>rafter</p>
