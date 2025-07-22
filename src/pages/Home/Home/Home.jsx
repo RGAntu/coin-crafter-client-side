@@ -4,6 +4,7 @@ import TestimonialSlider from '../TestimonialSlider/TestimonialSlider';
 import WhyChoose from '../WhyChoose/WhyChoose';
 import PlatformStats from '../PlatformStats/PlatformStats';
 import FAQ from '../FAQ/FAQ';
+import HowItWorks from '../HowItWorks/HowItWorks';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
 
             <TestimonialSlider></TestimonialSlider>
             <WhyChoose></WhyChoose>
+            <HowItWorks></HowItWorks>
             <PlatformStats></PlatformStats>
             <FAQ></FAQ>
             </div>
