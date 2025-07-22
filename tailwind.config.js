@@ -1,5 +1,5 @@
-import daisyui from 'daisyui';
-import flowbite from 'flowbite/plugin';
+import daisyui from "daisyui";
+import flowbite from "flowbite/plugin";
 
 export default {
   content: [
@@ -10,13 +10,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: '#3192DF',
-        secondary: '#16A352',
-        accent: '#919695',
+        primary: "#3192DF",
+        secondary: "#16A352",
+        accent: "#919695",
       },
     },
   },
- plugins: [daisyui, flowbite],
+  plugins: [daisyui, flowbite],
   daisyui: {
     themes: [
       {

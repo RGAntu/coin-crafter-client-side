@@ -7,3 +7,7 @@
   --color-secondary: #16A352;
   --color-accent: #919695;
 }
+
+.custom-slide-bg .carousel .slide {
+  background: transparent !important;
+}
