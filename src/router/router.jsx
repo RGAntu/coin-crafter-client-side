@@ -5,45 +5,56 @@ import AuthLayout from "../layouts/AuthLayout";
 import Register from "../pages/Authentication/Register/Register";
 import Login from "../pages/Authentication/Login/Login";
 import DashboardLayout from "../layouts/DashboardLayout";
-
-
+import BuyerHome from "../pages/Dashboard/Buyer/BuyerHome/BuyerHome";
+import AddTask from "../pages/Dashboard/Buyer/AddTask/AddTask";
+import PurchaseCoin from "../pages/Dashboard/Buyer/PurchaseCoin/PurchaseCoin";
+import Checkout from "../pages/Dashboard/Buyer/Checkout/Checkout";
 
 export const router = createBrowserRouter([
   {
     path: "/",
-    Component: BasicLayout,
-    children: [
-        {
-            index: true,
-            Component: Home
-        },
-        
-    ]
-  },
-  {
-    path: '/',
-    Component: AuthLayout,
+    element: <BasicLayout></BasicLayout>,
     children: [
       {
-        path: 'login',
-        Component: Login
+        index: true,
+        element: <Home></Home>,
+      },
+    ],
+  },
+  {
+    path: "/",
+    element: <AuthLayout></AuthLayout> ,
+    children: [
+      {
+        path: "login",
+        element: <Login></Login> ,
       },
       {
-        path: 'register',
-        Component: Register
-      }
-      
-
-    ]
-    
+        path: "register",
+        element: <Register></Register> ,
+      },
+    ],
   },
   {
-    path:"/dashboard",
+    path: "/dashboard",
     element: <DashboardLayout></DashboardLayout>,
-    children:[
+    children: [
       {
-        path:"home"
-      }
-    ]
-  }
+        path: "buyerHome",
+        element: <BuyerHome></BuyerHome>,
+      },
+      {
+        path: "add-task",
+        element: <AddTask></AddTask>
+      },
+        {
+      path: "purchase-coin",
+      element: <PurchaseCoin></PurchaseCoin>
+    },
+    {
+      path: "checkout/:coins/:price", 
+      element: <Checkout></Checkout>
+    }
+    ],
+  },
 ]);
