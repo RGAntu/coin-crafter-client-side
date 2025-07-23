@@ -1,62 +1,75 @@
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-const banners = [
-  {
-    id: 1,
-    title: "Earn Money with Simple Tasks",
-    subtitle: "Complete micro-tasks and get paid instantly",
-    description:
-      "Join thousands of workers earning money by completing simple online tasks. No experience needed!",
-  },
-  {
-    id: 2,
-    title: "Post Tasks, Get Results",
-    subtitle: "Outsource your work to skilled professionals",
-    description:
-      "Get your tasks completed quickly and efficiently by our verified worker community.",
-  },
-  {
-    id: 3,
-    title: "Trusted by Thousands",
-    subtitle: "Join the leading micro-tasking platform",
-    description:
-      "Secure payments, verified users, and 24/7 support make us the top choice for micro-work.",
-  },
-];
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css";
+import "swiper/css/navigation";
 
-const HeroCarousel = () => {
+const HeroSection = () => {
+  const slides = [
+    {
+      title: "Unlock Your Earning Potential",
+      description:
+        "Join thousands of users completing simple tasks and earning real money. Your next gig is just a click away.",
+      image: "https://i.ibb.co/JWDc8r94/slide1.jpg",
+      buttonText: "Start Earning",
+    },
+    {
+      title: "Turn Free Time Into Income",
+      description:
+        "Get paid for everyday activities. Choose the tasks you love and get rewarded instantly.",
+      image: "https://i.ibb.co/Q7H5MJQx/slide2.jpg",
+      buttonText: "Get Started",
+    },
+    {
+      title: "Flexible Work, Real Rewards",
+      description:
+        "Work on your terms. Whether part-time or full-time, there’s a task waiting for you.",
+      image: "https://i.ibb.co/LsLx7Gj/slide3.jpg",
+      buttonText: "Browse Tasks",
+    },
+  ];
+
   return (
-    <div className="relative">
-      <Carousel
-        autoPlay
-        infiniteLoop
-        showThumbs={false}
-        showStatus={false}
-        showArrows={true}
-        interval={4000}
-        transitionTime={800}
+    <div className="p-6 border rounded-2xl shadow-sm hover:shadow-md  bg-gradient-to-r from-[#cee2f3] to-[#cff8e1] text-white hover:opacity-90 transition-all duration-300"
+            style={{
+              backgroundImage: "linear-gradient(to right, #cee2f3, #cff8e1)",
+            }}>
+      <Swiper
+        navigation
+        modules={[Navigation, Autoplay]}
+        autoplay={{ delay: 4000 }}
+        loop
       >
-        {banners.map((banner) => (
-          <div
-            key={banner.id}
-            className={`h-[500px] flex flex-col items-center justify-center 
-              bg-blue-100 p-10`}
-          >
-            <h1 className="text-4xl font-bold mb-2 animate-fadeIn [animation-delay:0.2s]">
-              {banner.title}
-            </h1>
-            <h3 className="text-xl mb-4  animate-fadeIn [animation-delay:0.6s]">
-              {banner.subtitle}
-            </h3>
-            <p className="max-w-xl text-center mb-6 animate-fadeIn [animation-delay:1s]">
-              {banner.description}
-            </p>
-          </div>
+        {slides.map((slide, index) => (
+          <SwiperSlide key={index}>
+            <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-10 min-h-[70vh]">
+              {/* Left Content */}
+              <div className="text-white flex-1 space-y-4">
+                <h1 className="text-3xl md:text-5xl font-bold">
+                  {slide.title}
+                </h1>
+                <p className="text-base md:text-lg text-white/90">
+                  {slide.description}
+                </p>
+                <button className="bg-white text-blue-600 font-semibold px-5 py-2 rounded hover:bg-blue-100 transition">
+                  {slide.buttonText}
+                </button>
+              </div>
+
+              {/* Right Image */}
+              <div className="flex-1">
+                <img
+                  src={slide.image}
+                  alt="Slide"
+                  className="w-full max-w-md mx-auto rounded shadow-md"
+                />
+              </div>
+            </div>
+          </SwiperSlide>
         ))}
-      </Carousel>
+      </Swiper>
     </div>
   );
 };
 
-export default HeroCarousel;
+export default HeroSection;

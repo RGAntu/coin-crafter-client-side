@@ -18,7 +18,7 @@ const Login = () => {
   const onSubmit = async (data) => {
     try {
       await signIn(data.email, data.password);
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.error(error.message);
       setError("password", {
@@ -31,7 +31,7 @@ const Login = () => {
   const handleGoogleLogin = async () => {
     try {
       await signInWithGoogle();
-      navigate("/");
+      navigate("/dashboard");
     } catch (error) {
       console.error("Google Login Error:", error.message);
     }
