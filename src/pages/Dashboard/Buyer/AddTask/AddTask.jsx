@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import useAuth from '../../../../hooks/useAuth';
-import useAxiosSecure from '../../../../hooks/useAxiosSecure';
+
 import { useNavigate } from 'react-router';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../../hooks/useAxiosSecure';
 
 
 const imageHostingKey = import.meta.env.VITE_image_upload_key;
@@ -18,73 +19,66 @@ const { user } = useAuth();
   const [uploading, setUploading] = useState(false);
 
   const onSubmit = async (data) => {
-    const {
-      task_title,
-      task_detail,
-      required_workers,
-      payable_amount,
-      completion_date,
-      submission_info,
-      task_image,
-    } = data;
+  const {
+    task_title,
+    task_detail,
+    required_workers,
+    payable_amount,
+    completion_date,
+    submission_info,
+    task_image,
+  } = data;
 
-    const totalPay = parseInt(required_workers) * parseInt(payable_amount);
+  const totalPay = parseInt(required_workers) * parseInt(payable_amount);
 
-    try {
-      // Get user data to check coins
-      const userRes = await axiosSecure.get(`/users/${user.email}`);
-      const buyer = userRes.data;
-
-      if (!buyer || buyer.coins < totalPay) {
-        Swal.fire({
-          icon: "warning",
-          title: "Not enough coins",
-          text: "Purchase more coins to add this task.",
-        });
-        return navigate("/dashboard/purchaseCoin");
-      }
-
-      // Upload image
-      setUploading(true);
-      const formData = new FormData();
-      formData.append("image", task_image[0]);
-      const imgRes = await fetch(imageUploadURL, {
-        method: "POST",
-        body: formData,
+  try {
+    const userRes = await axiosSecure.get(`/users/${user.email}`);
+    const buyer = userRes.data;
+    if (!buyer || buyer.coins < totalPay) {
+      Swal.fire({
+        icon: "warning",
+        title: "Not enough coins",
+        text: "Purchase more coins to add this task.",
       });
-      const imgData = await imgRes.json();
-      setUploading(false);
-
-      if (imgData.success) {
-        const newTask = {
-          task_title,
-          task_detail,
-          required_workers: parseInt(required_workers),
-          payable_amount: parseInt(payable_amount),
-          total_payment: totalPay,
-          completion_date,
-          submission_info,
-          task_image_url: imgData.data.display_url,
-          buyer_email: user.email,
-          buyer_name: user.displayName,
-          status: "pending",
-          created_at: new Date(),
-        };
-
-        // Save task and reduce coins
-        const taskRes = await axiosSecure.post("/tasks", newTask);
-        if (taskRes.data.insertedId) {
-          await axiosSecure.patch(`/users/coins/${user.email}`, {
-            amount: -totalPay,
-          });
-          Swal.fire("Task Added", "Your task has been posted successfully!", "success");
-          reset();
-        }
-      }
-    } catch (err) {
-      console.error(err);
+      return navigate("/dashboard/purchaseCoin");
     }
-  };
+
+    setUploading(true);
+    const formData = new FormData();
+    formData.append("image", task_image[0]);
+    const imgRes = await fetch(imageUploadURL, {
+      method: "POST",
+      body: formData,
+    });
+    const imgData = await imgRes.json();
+    setUploading(false);
+
+    if (imgData.success) {
+      const newTask = {
+        title: task_title,                         // ✅ name fixed
+        task_details: task_detail,                // ✅ name fixed
+        submission_details: submission_info,      // ✅ name fixed
+        required_workers: parseInt(required_workers),
+        payable_amount: parseInt(payable_amount),
+        completion_date,
+        task_image_url: imgData.data.display_url,
+      };
+
+      const taskRes = await axiosSecure.post("/tasks", newTask);
+      if (taskRes.data.insertedId) {
+        await axiosSecure.patch(`/users/coins/${user.email}`, {
+          amount: -totalPay,
+        });
+        Swal.fire("Task Added", "Your task has been posted successfully!", "success");
+        reset();
+      }
+    }
+  } catch (err) {
+    console.error(err);
+    Swal.fire("Error", "Failed to add task. Try again.", "error");
+  }
+};
+
 
 
     return (

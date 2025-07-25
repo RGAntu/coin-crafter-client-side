@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useNavigate } from "react-router";
 import axios from "axios";
 import useAuth from "./useAuth";
-import { useNavigate } from "react-router";
 
 const axiosSecure = axios.create({
   baseURL: `http://localhost:5000`,
@@ -10,32 +10,27 @@ const axiosSecure = axios.create({
 const useAxiosSecure = () => {
   const { user, logOut } = useAuth();
   const navigate = useNavigate();
-  axiosSecure.interceptors.request.use(
-      (config) => {
-      if (user?.accessToken) {
-        config.headers.authorization = `Bearer ${user.accessToken}`;
+
+  useEffect(() => {
+    const setToken = async () => {
+      if (user) {
+        const token = await user.getIdToken(); //  this fetches the latest token
+        axiosSecure.defaults.headers.common["Authorization"] = `Bearer ${token}`;
       }
-      return config;
-    },
-    (error) => {
-      return Promise.reject(error);
-    }
-  );
+    };
+    setToken();
+  }, [user]);
 
   axiosSecure.interceptors.response.use(
-    (res) => {
-      return res;
-    },
+    (res) => res,
     (error) => {
-      const status = error.status;
+      const status = error.response?.status;
       if (status === 403) {
         navigate("/forbidden");
       } else if (status === 401) {
-        logOut()
-          .then(() => {
-            navigate("/login");
-          })
-          .catch(() => {});
+        logOut().then(() => {
+          navigate("/login");
+        });
       }
       return Promise.reject(error);
     }

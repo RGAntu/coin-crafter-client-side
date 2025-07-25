@@ -1,6 +1,14 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router";
-import { FaBell, FaPlus, FaTasks, FaWallet, FaHistory, FaHome, FaEye } from "react-icons/fa";
+import {
+  FaBell,
+  FaPlus,
+  FaTasks,
+  FaWallet,
+  FaHistory,
+  FaHome,
+  FaEye,
+} from "react-icons/fa";
 import CoinCrafterLogo from "../pages/shared/CoinCrafterLogo/CoinCrafterLogo";
 import useAuth from "../hooks/useAuth";
 import useUserRole from "../hooks/useUserRole";
@@ -30,7 +38,9 @@ const DashboardLayout = () => {
             </span>
 
             <img
-              src={user?.photoURL || "https://i.ibb.co/zQNgx6H/default-user.png"}
+              src={
+                user?.photoURL || "https://i.ibb.co/zQNgx6H/default-user.png"
+              }
               alt="User"
               className="w-8 h-8 object-cover rounded-full border"
               title={user?.displayName}
@@ -42,7 +52,10 @@ const DashboardLayout = () => {
             </div>
           </div>
 
-          <button className="btn btn-ghost btn-circle tooltip" data-tip="Notification">
+          <button
+            className="btn btn-ghost btn-circle tooltip"
+            data-tip="Notification"
+          >
             <FaBell className="w-5 h-5" />
           </button>
         </div>
@@ -53,7 +66,10 @@ const DashboardLayout = () => {
         {/* Sidebar */}
         <aside className="w-64 bg-base-100 border-r border-base-300 p-4 hidden md:block">
           <nav className="space-y-3">
-            {/* Buyer links  */}
+
+
+
+            {/* DashBoard links  */}
             <NavLink
               to="/dashboard"
               className={({ isActive }) =>
@@ -63,6 +79,21 @@ const DashboardLayout = () => {
               }
             >
               <FaHome /> Dashboard
+            </NavLink>
+
+            {/* Buyer-specific links  */}
+            {
+              !isRoleLoading && userRole == 'buyer' && <>
+              <NavLink
+              to="/dashboard/buyerHome"
+              className={({ isActive }) =>
+                `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                  isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                }`
+              }
+            >
+              <FaHome />
+              Home
             </NavLink>
 
             <NavLink
@@ -95,7 +126,7 @@ const DashboardLayout = () => {
                 }`
               }
             >
-            <FaEye/>   Review Submissions
+              <FaEye /> Review Submissions
             </NavLink>
 
             <NavLink
@@ -119,6 +150,14 @@ const DashboardLayout = () => {
             >
               <FaHistory /> Payment History
             </NavLink>
+              
+              </>
+            } 
+
+            {/* Worker specific links  */}
+
+            
+
           </nav>
         </aside>
 
