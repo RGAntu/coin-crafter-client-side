@@ -66,10 +66,7 @@ const DashboardLayout = () => {
         {/* Sidebar */}
         <aside className="w-64 bg-base-100 border-r border-base-300 p-4 hidden md:block">
           <nav className="space-y-3">
-
-
-
-            {/* DashBoard links  */}
+            {/* Universal Dashboard link */}
             <NavLink
               to="/dashboard"
               className={({ isActive }) =>
@@ -82,82 +79,172 @@ const DashboardLayout = () => {
             </NavLink>
 
             {/* Buyer-specific links  */}
-            {
-              !isRoleLoading && userRole == 'buyer' && <>
-              <NavLink
-              to="/dashboard/buyerHome"
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-md transition ${
-                  isActive ? "bg-primary text-white" : "hover:bg-base-200"
-                }`
-              }
-            >
-              <FaHome />
-              Home
-            </NavLink>
-
-            <NavLink
-              to="/dashboard/add-task"
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-md transition ${
-                  isActive ? "bg-primary text-white" : "hover:bg-base-200"
-                }`
-              }
-            >
-              <FaPlus /> Add Task
-            </NavLink>
-
-            <NavLink
-              to="/dashboard/my-tasks"
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-md transition ${
-                  isActive ? "bg-primary text-white" : "hover:bg-base-200"
-                }`
-              }
-            >
-              <FaTasks /> My Tasks
-            </NavLink>
-
-            <NavLink
-              to="/dashboard/review-submissions"
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-md transition ${
-                  isActive ? "bg-primary text-white" : "hover:bg-base-200"
-                }`
-              }
-            >
-              <FaEye /> Review Submissions
-            </NavLink>
-
-            <NavLink
-              to="/dashboard/purchase-coin"
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-md transition ${
-                  isActive ? "bg-primary text-white" : "hover:bg-base-200"
-                }`
-              }
-            >
-              <FaWallet /> Purchase Coin
-            </NavLink>
-
-            <NavLink
-              to="/dashboard/payment-history"
-              className={({ isActive }) =>
-                `flex items-center gap-3 px-3 py-2 rounded-md transition ${
-                  isActive ? "bg-primary text-white" : "hover:bg-base-200"
-                }`
-              }
-            >
-              <FaHistory /> Payment History
-            </NavLink>
-              
+            {!isRoleLoading && userRole === "buyer" && (
+              <>
+                <NavLink
+                  to="/dashboard/buyerHome"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaHome /> Home
+                </NavLink>
+                <NavLink
+                  to="/dashboard/add-task"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaPlus /> Add Task
+                </NavLink>
+                <NavLink
+                  to="/dashboard/my-tasks"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaTasks /> My Tasks
+                </NavLink>
+                <NavLink
+                  to="/dashboard/review-submissions"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaEye /> Review Submissions
+                </NavLink>
+                <NavLink
+                  to="/dashboard/purchase-coin"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaWallet /> Purchase Coin
+                </NavLink>
+                <NavLink
+                  to="/dashboard/payment-history"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaHistory /> Payment History
+                </NavLink>
               </>
-            } 
+            )}
 
-            {/* Worker specific links  */}
+            {/* Worker-specific links  */}
+            {!isRoleLoading && userRole === "worker" && (
+              <>
+                <NavLink
+                  to="/dashboard/workerHome"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaHome /> Home
+                </NavLink>
+                <NavLink
+                  to="/dashboard/approved-submissions"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaEye /> Approved Submissions
+                </NavLink>
+                <NavLink
+                  to="/dashboard/task-list"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaTasks /> Task List
+                </NavLink>
+                <NavLink
+                  to="/dashboard/my-submissions"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaHistory /> My Submissions
+                </NavLink>
+                <NavLink
+                  to="/dashboard/withdraw"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaWallet /> Withdraw
+                </NavLink>
+              </>
+            )}
 
-            
-
+            {/*  Admin-specific links - FIXED LOCATION */}
+            {!isRoleLoading && userRole === "admin" && (
+              <>
+                <NavLink
+                  to="/dashboard/admin-home"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaHome /> Admin Home
+                </NavLink>
+                <NavLink
+                  to="/dashboard/manage-withdraws"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaWallet /> Withdraw Requests
+                </NavLink>
+                <NavLink
+                  to="/dashboard/manage-users"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaTasks /> Manage Users
+                </NavLink>
+                <NavLink
+                  to="/dashboard/manage-tasks"
+                  className={({ isActive }) =>
+                    `flex items-center gap-3 px-3 py-2 rounded-md transition ${
+                      isActive ? "bg-primary text-white" : "hover:bg-base-200"
+                    }`
+                  }
+                >
+                  <FaTasks /> Manage Tasks
+                </NavLink>
+              </>
+            )}
           </nav>
         </aside>
 

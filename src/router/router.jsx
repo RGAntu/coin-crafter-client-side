@@ -13,6 +13,16 @@ import Forbidden from "../pages/Forbidden/Forbiden";
 import PaymentHistory from "../pages/Dashboard/Buyer/PaymentHistory/PaymentHistory";
 import BuyerHome from "../pages/Dashboard/Buyer/BuyerHome/BuyerHome";
 import ReviewSubmission from "../pages/Dashboard/Buyer/ReviewSubmission/ReviewSubmission";
+import DashboardHome from "../pages/Dashboard/DashboardHome/DashboardHome";
+import WorkerHome from "../pages/Dashboard/Worker/WorkerHome/WorkerHome";
+import ApprovedSubmissions from "../pages/Dashboard/Worker/ApprovedSubmissions/ApprovedSubmissions";
+import TaskList from "../pages/Dashboard/Worker/TaskList/TaskList";
+import TaskDetails from "../pages/Dashboard/Worker/TaskDetails/TaskDetails";
+import MySubmissions from "../pages/Dashboard/Worker/MySubmissions/MySubmissions";
+import WithdrawalForm from "../pages/Dashboard/Worker/WithdrawalForm/WithdrawalForm";
+
+
+
 
 export const router = createBrowserRouter([
   {
@@ -49,37 +59,69 @@ export const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <BuyerHome></BuyerHome>
+        element: <DashboardHome></DashboardHome>
       },
+
+      // Buyer Routes
       {
         path: "buyerHome",
-        element: <BuyerHome></BuyerHome>
+        element: <BuyerHome></BuyerHome> 
 
       },
       {
         path: "add-task",
-        element: <AddTask></AddTask>,
+        element:  <AddTask></AddTask> 
       },
       {
         path: "my-tasks",
-        element: <MyTasks></MyTasks>,
+        element:<MyTasks></MyTasks> ,
       },
       {
         path: "review-submissions",
-        element: <ReviewSubmission></ReviewSubmission>
+        element:  <ReviewSubmission></ReviewSubmission> 
       },
       {
         path: "purchase-coin",
-        element: <PurchaseCoin></PurchaseCoin>,
+        element:  <PurchaseCoin></PurchaseCoin>  ,
       },
       {
         path: "checkout/:coins/:price",
-        element: <Checkout></Checkout>,
+        element:  <Checkout></Checkout>  ,
       },
       {
         path: "payment-history",
-        element: <PaymentHistory></PaymentHistory>,
+        element: <PaymentHistory></PaymentHistory> ,
       },
+
+      // Worker Routes 
+
+      {
+        path: "workerHome",
+        element: <WorkerHome></WorkerHome>
+      },
+      {
+        path: "approved-submissions",
+        element: <ApprovedSubmissions></ApprovedSubmissions>
+      },
+      {
+        path: "task-list",
+        element: <TaskList></TaskList>
+      }, 
+      {
+        path: "task-details/:id",
+        element: <TaskDetails></TaskDetails>
+      },
+      {
+        path: "my-submissions",
+        element: <MySubmissions></MySubmissions>
+      },
+      {
+        path: "withdraw",
+        element: <WithdrawalForm></WithdrawalForm>
+      },
+
+      
+
     ],
   },
 ]);

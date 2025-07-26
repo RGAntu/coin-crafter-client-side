@@ -5,13 +5,14 @@ import WhyChoose from '../WhyChoose/WhyChoose';
 import PlatformStats from '../PlatformStats/PlatformStats';
 import FAQ from '../FAQ/FAQ';
 import HowItWorks from '../HowItWorks/HowItWorks';
+import BestWorkers from '../BestWorkers/BestWorkers';
 
 const Home = () => {
     return (
         <div>
             <HeroCarousel></HeroCarousel> 
             <div className='max-w-7xl mx-auto'>
-
+            <BestWorkers></BestWorkers>
             <TestimonialSlider></TestimonialSlider>
             <WhyChoose></WhyChoose>
             <HowItWorks></HowItWorks>
