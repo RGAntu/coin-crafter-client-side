@@ -37,11 +37,11 @@ const TaskDetails = () => {
       return axiosSecure.post("/submissions", body);
     },
     onSuccess: () => {
-      Swal.fire("✅ Success!", "Your submission has been sent for review.", "success");
+      Swal.fire(" Success!", "Your submission has been sent for review.", "success");
       setDetails("");
     },
     onError: () => {
-      Swal.fire("❌ Error", "Submission failed. Please try again.", "error");
+      Swal.fire(" Error", "Submission failed. Please try again.", "error");
     },
   });
 

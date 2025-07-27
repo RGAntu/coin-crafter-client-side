@@ -20,6 +20,11 @@ import TaskList from "../pages/Dashboard/Worker/TaskList/TaskList";
 import TaskDetails from "../pages/Dashboard/Worker/TaskDetails/TaskDetails";
 import MySubmissions from "../pages/Dashboard/Worker/MySubmissions/MySubmissions";
 import WithdrawalForm from "../pages/Dashboard/Worker/WithdrawalForm/WithdrawalForm";
+import AdminHome from "../pages/Dashboard/Admin/AdminHome/AdminHome";
+import ManageWithdraws from "../pages/Dashboard/Admin/ManageWithdraws/ManageWithdraws";
+import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
+import ManageTasks from "../pages/Dashboard/Admin/ManageTasks/ManageTasks";
+import WorkerRoute from "../routes/WorkerRoute";
 
 
 
@@ -97,7 +102,7 @@ export const router = createBrowserRouter([
 
       {
         path: "workerHome",
-        element: <WorkerHome></WorkerHome>
+        element: <WorkerRoute> <WorkerHome></WorkerHome> </WorkerRoute>
       },
       {
         path: "approved-submissions",
@@ -119,6 +124,24 @@ export const router = createBrowserRouter([
         path: "withdraw",
         element: <WithdrawalForm></WithdrawalForm>
       },
+
+      // Admin Router 
+      {
+        path: "admin-home",
+        element: <AdminHome></AdminHome>
+      },
+      {
+        path: "manage-withdraws",
+        element: <ManageWithdraws></ManageWithdraws>
+      },
+      {
+        path:"manage-users",
+        element: <ManageUsers></ManageUsers>
+      },
+      {
+        path: "manage-tasks",
+        element: <ManageTasks></ManageTasks>
+      }
 
       
 

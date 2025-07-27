@@ -18,7 +18,7 @@ const DashboardHome = () => {
           navigate("/dashboard/workerHome");
           break;
         case "admin":
-          navigate("/dashboard/adminHome");
+          navigate("/dashboard/admin-home");
           break;
         default:
           navigate("/forbidden");
