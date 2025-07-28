@@ -29,7 +29,7 @@ const Navbar = () => {
       )}
       {user && (
         <li>
-          <Link to="/available-coins">Available Coin</Link>
+          <Link to="/available-coin">Available Coin</Link>
         </li>
       )}
     </>
@@ -110,14 +110,14 @@ const Navbar = () => {
         )}
 
         {/* Always Show */}
-        <a
+        <Link
           href="https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-RGAntu"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-outline flex items-center gap-2"
+          className="btn btn-outline hidden md:flex lg:flex items-center gap-2"
         >
           <FaGithub /> Join as Developer
-        </a>
+        </Link>
       </div>
     </div>
   );

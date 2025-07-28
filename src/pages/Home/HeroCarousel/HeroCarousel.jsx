@@ -45,13 +45,13 @@ const HeroSection = () => {
             <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-10 min-h-[70vh]">
               {/* Left Content */}
               <div className="text-white flex-1 space-y-4">
-                <h1 className="text-3xl md:text-5xl font-bold">
+                <h1 className="text-primary text-3xl md:text-5xl font-bold">
                   {slide.title}
                 </h1>
-                <p className="text-base md:text-lg text-white/90">
+                <p className="text-base md:text-lg text-accent">
                   {slide.description}
                 </p>
-                <button className="bg-white text-blue-600 font-semibold px-5 py-2 rounded hover:bg-blue-100 transition">
+                <button className="bg-white text-secondary font-semibold px-5 py-2 rounded hover:bg-blue-100 transition">
                   {slide.buttonText}
                 </button>
               </div>

@@ -26,6 +26,7 @@ import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import ManageTasks from "../pages/Dashboard/Admin/ManageTasks/ManageTasks";
 import WorkerRoute from "../routes/WorkerRoute";
 import PrivateRoute from "../routes/PrivateRoute";
+import AvailableCoin from "../pages/AvailableCoin/AvailableCoin";
 
 
 
@@ -38,6 +39,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
+      },
+      {
+        path: "available-coin",
+        element: <AvailableCoin></AvailableCoin>
       },
       {
         path: "forbidden",

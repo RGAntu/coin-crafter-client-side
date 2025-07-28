@@ -10,7 +10,7 @@ const CoinCrafterLogo = () => {
           src="https://i.ibb.co/nqdPk3Gn/coin-crafter.png"
           alt="logo"
         />
-        <p className="text-3xl -ml-2 font-bold text-primary ">Coin<span className="text-secondary">C</span>rafter</p>
+        <p className="text-3xl -ml-2 hidden md:block lg:block font-bold text-primary ">Coin<span className="text-secondary">C</span>rafter</p>
       </div>
     </Link>
   );

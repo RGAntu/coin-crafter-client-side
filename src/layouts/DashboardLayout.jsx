@@ -55,8 +55,8 @@ const DashboardLayout = () => {
 
           <div className="flex-1 flex justify-end items-center gap-6 text-sm">
             <div className="flex items-center gap-3">
-              <span className="hidden sm:block font-medium">
-                Available Coin: {availableCoin}
+              <span className="font-medium">
+                <span className="hidden md:block lg:block">Available</span> Coin: {availableCoin}
               </span>
               <img
                 src={user?.photoURL || "https://i.ibb.co/zQNgx6H/default-user.png"}
@@ -64,7 +64,7 @@ const DashboardLayout = () => {
                 className="w-8 h-8 object-cover rounded-full border"
                 title={user?.displayName}
               />
-              <div className="text-right hidden sm:block">
+              <div className="text-right ">
                 <p className="font-bold">{user?.displayName || "Anonymous"}</p>
                 <p className="text-xs text-gray-500 capitalize">{userRole}</p>
               </div>
