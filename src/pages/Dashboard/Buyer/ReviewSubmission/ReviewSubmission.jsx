@@ -22,14 +22,20 @@ const ReviewSubmission = () => {
 });
 
   const handleStatusChange = async (id, status) => {
-    const res = await axiosSecure.patch(`/submissions/update-status/${id}`, {
-      status,
-    });
-    if (res.data.modifiedCount > 0) {
-      Swal.fire(`Submission ${status} successfully`, "", "success");
-      refetch();
-    }
-  };
+  let url = "";
+
+  if (status === "approved") {
+    url = `/submissions/approve/${id}`;
+  } else if (status === "rejected") {
+    url = `/submissions/reject/${id}`;
+  }
+
+  const res = await axiosSecure.patch(url);
+  if (res.data.modifiedCount > 0 || res.data.success) {
+    Swal.fire(`Submission ${status} successfully`, "", "success");
+    refetch();
+  }
+};
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">Review Task Submissions</h2>

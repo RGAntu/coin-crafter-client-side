@@ -25,6 +25,7 @@ import ManageWithdraws from "../pages/Dashboard/Admin/ManageWithdraws/ManageWith
 import ManageUsers from "../pages/Dashboard/Admin/ManageUsers/ManageUsers";
 import ManageTasks from "../pages/Dashboard/Admin/ManageTasks/ManageTasks";
 import WorkerRoute from "../routes/WorkerRoute";
+import PrivateRoute from "../routes/PrivateRoute";
 
 
 
@@ -60,7 +61,7 @@ export const router = createBrowserRouter([
   },
   {
     path: "/dashboard",
-    element: <DashboardLayout></DashboardLayout>,
+    element: <PrivateRoute> <DashboardLayout></DashboardLayout></PrivateRoute>,
     children: [
       {
         index: true,
@@ -85,6 +86,8 @@ export const router = createBrowserRouter([
         path: "review-submissions",
         element:  <ReviewSubmission></ReviewSubmission> 
       },
+      
+      
       {
         path: "purchase-coin",
         element:  <PurchaseCoin></PurchaseCoin>  ,

@@ -29,7 +29,7 @@ const BuyerHome = () => {
       <div className="card bg-green-100 shadow-md p-6 rounded-2xl">
         <h2 className="text-xl font-bold">Tasks to Review</h2>
         <p className="text-3xl">{stats.pendingReviews || 0}</p>
-        <Link to="/dashboard/buyer/review-submissions" className="btn mt-4">
+        <Link to="/dashboard/review-submissions" className="btn mt-4">
           Review Now
         </Link>
       </div>

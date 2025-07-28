@@ -29,6 +29,8 @@ const { user } = useAuth();
     task_image,
   } = data;
 
+  console.log(data)
+
   const totalPay = parseInt(required_workers) * parseInt(payable_amount);
 
   try {
@@ -55,9 +57,9 @@ const { user } = useAuth();
 
     if (imgData.success) {
       const newTask = {
-        title: task_title,                         // ✅ name fixed
-        task_details: task_detail,                // ✅ name fixed
-        submission_details: submission_info,      // ✅ name fixed
+        task_title: task_title,                         
+        task_details: task_detail,                
+        submission_details: submission_info,      
         required_workers: parseInt(required_workers),
         payable_amount: parseInt(payable_amount),
         completion_date,

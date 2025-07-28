@@ -45,9 +45,9 @@ const MyTasks = () => {
     e.preventDefault();
     const form = e.target;
     const updated = {
-      title: form.title.value,
-      task_details: form.task_details.value,
-      submission_details: form.submission_details.value,
+      task_title: form.task_title.value,
+      task_detail: form.task_detail.value,
+      submission_info: form.submission_info.value,
     };
     const res = await axiosSecure.put(`/tasks/${editTask._id}`, updated);
     if (res.data.modifiedCount > 0) {
@@ -84,9 +84,9 @@ const MyTasks = () => {
             <tbody>
               {tasks.map((task) => (
                 <tr key={task._id}>
-                  <td>{task.title || "N/A"}</td>
-                  <td>{task.task_details || "N/A"}</td>
-                  <td>{task.submission_details || "N/A"}</td>
+                  <td>{task.task_title || "N/A"}</td>
+                  <td>{task.task_detail || "N/A"}</td>
+                  <td>{task.submission_info || "N/A"}</td>
                   <td>${task.payable_amount}</td>
                   <td>{task.required_workers}</td>
                   <td>{task.status}</td>
@@ -120,23 +120,24 @@ const MyTasks = () => {
             <h3 className="text-xl font-semibold mb-2">Update Task</h3>
             <input
               type="text"
-              name="title"
-              defaultValue={editTask?.title || ""}
+              name="task_title"
+              defaultValue={editTask?.task_title || ""}
               className="input input-bordered w-full"
               required
             />
             <textarea
-              name="task_details"
-              defaultValue={editTask?.task_details || ""}
+              name="task_detail"
+              defaultValue={editTask?.task_detail || ""}
               className="textarea textarea-bordered w-full"
               required
             />
             <textarea
-              name="submission_details"
-              defaultValue={editTask?.submission_details || ""}
+              name="submission_info"
+              defaultValue={editTask?.submission_info || ""}
               className="textarea textarea-bordered w-full"
               required
             />
+
             <div className="flex justify-end gap-2">
               <button
                 type="button"
