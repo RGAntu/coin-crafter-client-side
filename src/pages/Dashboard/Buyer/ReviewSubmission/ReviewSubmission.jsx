@@ -21,21 +21,35 @@ const ReviewSubmission = () => {
   enabled: !!user?.email,
 });
 
-  const handleStatusChange = async (id, status) => {
+ const handleStatusChange = async (id, status) => {
   let url = "";
+  let body = {};
 
   if (status === "approved") {
-    url = `/submissions/approve/${id}`;
+    url = `/submissions/update-status/${id}`;
+    body = { status };
   } else if (status === "rejected") {
     url = `/submissions/reject/${id}`;
+    body = {}; // Axios requires this to avoid 404 with empty PATCH
+  } else {
+    return Swal.fire("Error", "Invalid status selected", "error");
   }
 
-  const res = await axiosSecure.patch(url);
-  if (res.data.modifiedCount > 0 || res.data.success) {
-    Swal.fire(`Submission ${status} successfully`, "", "success");
-    refetch();
+  try {
+    const res = await axiosSecure.patch(url, body);
+
+    if (res.data.modifiedCount > 0 || res.data.success) {
+      Swal.fire(`Submission ${status} successfully`, "", "success");
+      refetch();
+    } else {
+      Swal.fire("Error", "No changes were made", "error");
+    }
+  } catch (err) {
+    console.error("Status update error:", err);
+    Swal.fire("Error", "Something went wrong", "error");
   }
 };
+
   return (
     <div className="p-4">
       <h2 className="text-2xl font-bold mb-4">Review Task Submissions</h2>
