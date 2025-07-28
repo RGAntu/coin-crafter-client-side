@@ -21,7 +21,7 @@ const TaskDetails = () => {
   });
   
   console.log(task)
-  
+
   const mutation = useMutation({
     mutationFn: async () => {
       const body = {
@@ -31,8 +31,12 @@ const TaskDetails = () => {
         worker_email: user.email,
         submission_details: details,
         worker_name: user.displayName,
-        buyer_name: task.created_by,
-        buyer_email: task.buyer_email,
+
+
+        buyer_name: task.buyer_name || task.created_by,
+        buyer_email: task.created_by,
+
+
         current_date: new Date().toISOString(),
         status: "pending",
       };
