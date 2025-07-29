@@ -102,7 +102,7 @@ const HowItWorks = () => {
           <h3 className="text-2xl font-bold text-green-600 mb-10 text-center lg:text-left">
             For Buyers
           </h3>
-          <div className="relative space-y-10 lg:before:absolute lg:before:left-5 lg:before:top-3 lg:before:bottom-0 lg:before:w-1 lg:before:bg-green-100">
+          <div className="relative space-y-10 lg:before:absolute lg:before:left-5 lg:before:top-3 lg:before:bottom-0 lg:before:w-1 lg:before:bg-green-100 ">
             {steps.buyer.map((step, i) => (
               <StepCard key={i} step={step} index={i} color="green" />
             ))}
