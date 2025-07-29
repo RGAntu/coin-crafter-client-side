@@ -1,39 +1,54 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import Lottie from "lottie-react";
 
-const HeroSection = () => {
+const HeroCarousel = () => {
   const slides = [
     {
       title: "Unlock Your Earning Potential",
       description:
         "Join thousands of users completing simple tasks and earning real money. Your next gig is just a click away.",
-      image: "https://i.ibb.co/JWDc8r94/slide1.jpg",
+      lottiePath: "/Finance.json",
       buttonText: "Start Earning",
     },
     {
       title: "Turn Free Time Into Income",
       description:
         "Get paid for everyday activities. Choose the tasks you love and get rewarded instantly.",
-      image: "https://i.ibb.co/Q7H5MJQx/slide2.jpg",
+      lottiePath: "/money_lottie.json",
       buttonText: "Get Started",
     },
     {
       title: "Flexible Work, Real Rewards",
       description:
         "Work on your terms. Whether part-time or full-time, there’s a task waiting for you.",
-      image: "https://i.ibb.co/LsLx7Gj/slide3.jpg",
+      lottiePath: "/Business Analytics.json",
       buttonText: "Browse Tasks",
     },
   ];
 
+  const [animations, setAnimations] = useState([]);
+
+  // Fetch all Lottie files
+  useEffect(() => {
+    Promise.all(
+      slides.map((slide) =>
+        fetch(slide.lottiePath)
+          .then((res) => res.json())
+          .catch(() => null)
+      )
+    ).then(setAnimations);
+  }, []);
   return (
-    <div className="p-6 border rounded-2xl shadow-sm hover:shadow-md  bg-gradient-to-r from-[#cee2f3] to-[#cff8e1] text-white hover:opacity-90 transition-all duration-300"
-            style={{
-              backgroundImage: "linear-gradient(to right, #cee2f3, #cff8e1)",
-            }}>
+    <div
+      className="p-6 border rounded-2xl shadow-sm hover:shadow-md bg-gradient-to-r from-[#cee2f3] to-[#cff8e1] text-white hover:opacity-90 transition-all duration-300"
+      style={{
+        backgroundImage: "linear-gradient(to right, #cee2f3, #cff8e1)",
+      }}
+    >
       <Swiper
         navigation
         modules={[Navigation, Autoplay]}
@@ -56,13 +71,18 @@ const HeroSection = () => {
                 </button>
               </div>
 
-              {/* Right Image */}
+              {/* Right Animation */}
               <div className="flex-1">
-                <img
-                  src={slide.image}
-                  alt="Slide"
-                  className="w-full max-w-md mx-auto rounded shadow-md"
-                />
+                {animations[index] ? (
+                  <Lottie
+                    animationData={animations[index]}
+                    loop
+                    autoplay
+                    className="w-full max-w-md mx-auto"
+                  />
+                ) : (
+                  <p className="text-gray-700">Loading animation...</p>
+                )}
               </div>
             </div>
           </SwiperSlide>
@@ -72,4 +92,4 @@ const HeroSection = () => {
   );
 };
 
-export default HeroSection;
+export default HeroCarousel;
