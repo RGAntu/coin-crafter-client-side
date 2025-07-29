@@ -57,7 +57,7 @@ const PlatformStats = () => {
             <h3 className="text-4xl text-primary font-bold">
               <CountUp
                 end={item.count}
-                duration={5}
+                duration={10}
                 prefix={item.prefix || ""}
                 suffix={item.suffix || ""}
                 separator=","
