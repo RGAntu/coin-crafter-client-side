@@ -1,6 +1,6 @@
-# 💼 Micro Tasking and Earning Platform
+# 💼 CoinCrafter is Micro Tasking and Earning Platform
 
-A robust web platform where users can **earn money** by completing micro-tasks or **hire workers** to perform tasks. Inspired by sites like *Picoworkers* and *Clickworker*, but built with original design and modern features.
+A robust web platform where users can **earn money** by completing micro-tasks or **hire workers** to perform tasks. 
 
 ---
 

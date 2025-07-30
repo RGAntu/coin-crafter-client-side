@@ -16,7 +16,9 @@ const ManageTasks = () => {
       const res = await axiosSecure.get("/tasks");
       return res.data;
     },
+    
   });
+
 
   const handleDelete = async (id) => {
     const confirm = await Swal.fire({
