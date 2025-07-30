@@ -53,28 +53,28 @@ const ManageWithdraws = () => {
                 <th>Action</th>
               </tr>
             </thead>
-            <tbody>
-              {withdrawals.map((w) => (
-                <tr key={w._id}>
-                  <td>{w.name || "N/A"}</td>
-                  <td>{w.email}</td>
-                  <td>{w.amount} coins</td>
-                  <td>{new Date(w.requestedAt || w._id?.getTimestamp()).toLocaleString()}</td>
-                  <td>
-                    <span className="badge badge-warning">Pending</span>
-                  </td>
-                  <td>
-                    <button
-                      onClick={() => mutation.mutate(w._id)}
-                      className="btn btn-sm btn-success"
-                      disabled={mutation.isPending}
-                    >
-                      {mutation.isPending ? "Approving..." : "Approve"}
-                    </button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
+          <tbody>
+  {withdrawals.map((w) => (
+    <tr key={w._id}>
+      <td>{w.worker_name || "N/A"}</td>
+      <td>{w.worker_email}</td>
+      <td>{w.withdrawal_coin} coins</td>
+      <td>{new Date(w.requestedAt).toLocaleString()}</td>
+      <td>
+        <span className="badge badge-warning">Pending</span>
+      </td>
+      <td>
+        <button
+          onClick={() => mutation.mutate(w._id)}
+          className="btn btn-sm btn-success"
+          disabled={mutation.isPending}
+        >
+          {mutation.isPending ? "Approving..." : "Approve"}
+        </button>
+      </td>
+    </tr>
+  ))}
+</tbody>
           </table>
         </div>
       )}

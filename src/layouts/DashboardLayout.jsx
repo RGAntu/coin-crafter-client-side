@@ -15,6 +15,7 @@ import useUserRole from "../hooks/useUserRole";
 import useAxiosSecure from "../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import Loading from "../pages/shared/Loading/Loading";
+import NotificationsPopup from "../pages/Notifications/NotificationsPopup";
 
 const DashboardLayout = () => {
   const { user, loading } = useAuth();
@@ -70,9 +71,10 @@ const DashboardLayout = () => {
               </div>
             </div>
 
-            <button className="btn btn-ghost btn-circle tooltip" data-tip="Notification">
+            {/* <button className="btn btn-ghost btn-circle tooltip" data-tip="Notification">
               <FaBell className="w-5 h-5" />
-            </button>
+            </button> */}
+            <NotificationsPopup></NotificationsPopup>
           </div>
         </header>
 

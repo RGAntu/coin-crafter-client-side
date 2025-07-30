@@ -18,7 +18,7 @@ const WithdrawalForm = () => {
     if (user?.email) {
       axiosSecure
         .get(`/submissions/coin-balance?email=${user.email}`)
-        .then((res) => setCoinBalance(res.data.totalCoin || 0));
+        .then((res) => setCoinBalance(res.data.totalCoins || 0));
     }
   }, [user, axiosSecure]);
 
