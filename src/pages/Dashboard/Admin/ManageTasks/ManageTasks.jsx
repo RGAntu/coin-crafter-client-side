@@ -20,6 +20,7 @@ const ManageTasks = () => {
   });
 
 
+
   const handleDelete = async (id) => {
     const confirm = await Swal.fire({
       title: "Are you sure?",
@@ -60,9 +61,10 @@ const ManageTasks = () => {
             <tr key={task._id}>
               <td>{index + 1}</td>
               <td>{task.task_title}</td>
-              <td>{task.buyer_name}</td>
+              <td>{task.created_by}</td>
               <td>${task.payable_amount}</td>
-              <td>{task.workers}</td>
+              <td>{task.required_workers
+}</td>
               <td>{task.completion_date?.split("T")[0]}</td>
               <td>
                 <button
