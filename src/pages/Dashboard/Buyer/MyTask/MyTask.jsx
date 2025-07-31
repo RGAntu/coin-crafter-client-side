@@ -23,6 +23,8 @@ const MyTasks = () => {
     },
   });
 
+  console.log(tasks);
+
   const handleDelete = async (id) => {
     const confirm = await Swal.fire({
       title: "Delete this task?",
@@ -47,7 +49,7 @@ const MyTasks = () => {
     const updated = {
       task_title: form.task_title.value,
       task_detail: form.task_detail.value,
-      submission_info: form.submission_info.value,
+      submission_details: form.submission_details.value,
     };
     const res = await axiosSecure.put(`/tasks/${editTask._id}`, updated);
     if (res.data.modifiedCount > 0) {
@@ -86,7 +88,7 @@ const MyTasks = () => {
                 <tr key={task._id}>
                   <td>{task.task_title || "N/A"}</td>
                   <td>{task.task_detail || "N/A"}</td>
-                  <td>{task.submission_info || "N/A"}</td>
+                  <td>{task.submission_details || "N/A"}</td>
                   <td>${task.payable_amount}</td>
                   <td>{task.required_workers}</td>
                   <td>{task.status}</td>
@@ -132,8 +134,8 @@ const MyTasks = () => {
               required
             />
             <textarea
-              name="submission_info"
-              defaultValue={editTask?.submission_info || ""}
+              name="submission_details"
+              defaultValue={editTask?.submission_details || ""}
               className="textarea textarea-bordered w-full"
               required
             />
