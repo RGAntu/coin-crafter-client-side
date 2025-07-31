@@ -23,7 +23,7 @@ const MyTasks = () => {
     },
   });
 
-  console.log(tasks);
+  
 
   const handleDelete = async (id) => {
     const confirm = await Swal.fire({

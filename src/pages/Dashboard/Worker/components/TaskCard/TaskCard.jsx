@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 
 const TaskCard = ({ task }) => {
   const navigate = useNavigate();
-  console.log(task)
+  
 
   return (
     <div className="border p-4 rounded-lg shadow-sm bg-white hover:shadow-md transition">

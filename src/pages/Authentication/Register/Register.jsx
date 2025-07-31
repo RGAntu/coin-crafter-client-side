@@ -82,7 +82,7 @@ const Register = () => {
     try {
       const res = await axios.post(imageUploadUrl, formData);
       setProfilePic(res.data.data.url);
-      console.log("Image uploaded:", res.data.data.url);
+      // console.log("Image uploaded:", res.data.data.url);
     } catch (error) {
       console.error("Image upload failed:", error);
       alert("Image upload failed. Please try again.");

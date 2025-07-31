@@ -27,7 +27,7 @@ const AddTask = () => {
       task_image,
     } = data;
 
-    console.log(data);
+    
 
     const totalPay = parseInt(required_workers) * parseInt(payable_amount);
 

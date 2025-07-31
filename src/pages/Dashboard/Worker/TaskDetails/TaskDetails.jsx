@@ -20,7 +20,7 @@ const TaskDetails = () => {
     },
   });
   
-  console.log(task)
+
 
   const mutation = useMutation({
     mutationFn: async () => {

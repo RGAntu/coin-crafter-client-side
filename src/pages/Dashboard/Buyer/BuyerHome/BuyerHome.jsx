@@ -18,7 +18,7 @@ const BuyerHome = () => {
     enabled: !!user?.email,
   });
 
-  console.log(stats)
+  
 
   if (isLoading) return <p>Loading...</p>;
 
