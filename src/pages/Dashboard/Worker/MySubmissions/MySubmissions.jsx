@@ -20,8 +20,8 @@ const MySubmissions = () => {
     },
     enabled: !!user?.email,
   });
-  console.log(data);
 
+  
   if (isLoading) {
     return <div className="text-center mt-10">Loading submissions...</div>;
   }
