@@ -28,8 +28,9 @@ import WorkerRoute from "../routes/WorkerRoute";
 import PrivateRoute from "../routes/PrivateRoute";
 import AvailableCoin from "../pages/AvailableCoin/AvailableCoin";
 
-import ForBuyers from "../pages/ForBuyers/ForBuyers";
+
 import ForWorkerHome from "../pages/ForWorkers/ForWorkerHome/ForWorkerHome";
+import ForBuyersHome from "../pages/ForBuyers/ForBuyersHome/ForBuyersHome";
 
 
 
@@ -53,7 +54,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "buyers",
-        element: <ForBuyers></ForBuyers>
+        element: <ForBuyersHome></ForBuyersHome>
       },
       {
         path: "forbidden",

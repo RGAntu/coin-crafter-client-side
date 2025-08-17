@@ -44,9 +44,11 @@ const HeroCarousel = () => {
   }, []);
   return (
     <div
-      className="p-6 border rounded-2xl shadow-sm hover:shadow-md bg-gradient-to-r from-[#cee2f3] to-[#cff8e1] text-white hover:opacity-90 transition-all duration-300"
+      className="p-6 border rounded-b-xl shadow-sm hover:shadow-md 
+             bg-gradient-to-r from-blue-500 to-teal-400 
+             text-white hover:opacity-90 transition-all duration-300"
       style={{
-        backgroundImage: "linear-gradient(to right, #cee2f3, #cff8e1)",
+        backgroundImage: "linear-gradient(to right, #3b82f6, #14b8a6)",
       }}
     >
       <Swiper
@@ -60,7 +62,7 @@ const HeroCarousel = () => {
             <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-10 min-h-[70vh]">
               {/* Left Content */}
               <div className="text-white flex-1 space-y-4">
-                <h1 className="text-primary text-3xl md:text-5xl lg:text-10xl font-bold">
+                <h1 className="text-white text-3xl md:text-5xl lg:text-10xl font-bold">
                   {slide.title}
                 </h1>
                 <p className="text-base md:text-lg text-accent">

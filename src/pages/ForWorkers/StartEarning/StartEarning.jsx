@@ -10,10 +10,10 @@ const StartEarning = () => {
       </p>
      
       <Link to="/register">
-       <button className="btn bg-gradient-to-r from-green-400 to-teal-400 border-none text-white font-semibold px-6 py-3 rounded-lg shadow-md hover:scale-105 transition duration-300">
-        Create Worker Account
-      </button>
-      </Link>
+  <button className="btn bg-accent hover:bg-secondary border-none text-white font-semibold px-6 py-6 rounded-lg shadow-md hover:scale-105 transition duration-300">
+    Create Worker Account
+  </button>
+</Link>
     </section>
   );
 };

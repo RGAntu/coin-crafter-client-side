@@ -3,7 +3,7 @@ import React from "react";
 const Earnings = () => {
   return (
     <section className="py-16 bg-base-200">
-      <div className="text-center mb-12">
+      <div className="text-center mb-12 px-5">
         <h2 className="text-3xl font-bold text-gray-900">Earnings Potential</h2>
         <p className="text-gray-600 mt-2">
           See how much you can earn based on your activity level and skill
@@ -11,9 +11,9 @@ const Earnings = () => {
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto px-5">
         {/* Beginner */}
-        <div className="card bg-base-100 shadow-md border rounded-xl text-center p-6">
+        <div className="card bg-base-100 shadow-md border rounded-xl text-center p-6 ">
           <h3 className="text-blue-600 font-semibold text-lg">Beginner</h3>
           <p className="text-2xl font-bold my-3">$50–100/month</p>
           <p className="text-sm text-gray-500">Monthly potential</p>
