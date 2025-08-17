@@ -10,9 +10,9 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: "#3192DF",
-        secondary: "#16A352",
-        accent: "#919695",
+        primary: "#3C83F6",
+        secondary: "#16A555",
+        accent: "#6d0de3",
       },
     },
     animation: {
@@ -30,9 +30,9 @@ export default {
     themes: [
       {
         mytheme: {
-          primary: "#3192DF",
-          secondary: "#16A352",
-          accent: "#919695",
+          primary: "#3C83F6",
+          secondary: "#16A555",
+          accent: "#101828",
         },
       },
     ],

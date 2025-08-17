@@ -71,7 +71,7 @@ const StepCard = ({ step, index, color }) => (
     </div>
     {/* Icon and Text */}
     <div
-      className={`bg-white p-4 rounded-xl shadow-sm border border-${color}-100 w-full`}
+      className={`bg-white p-4 rounded-xl shadow-sm border border-gray-200 w-full`}
     >
       <div className={`text-xl text-${color}-600 mb-1`}>{step.icon}</div>
       <h4 className="text-lg font-semibold">{step.title}</h4>
@@ -84,7 +84,7 @@ const HowItWorks = () => {
   return (
     <section className="py-20 px-4 sm:px-6 bg-gradient-to-b from-white via-gray-50 to-white">
       <h2 className="text-4xl font-bold text-center mb-16">How it Works</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
         {/* Workers */}
         <div>
           <h3 className="text-2xl font-bold text-blue-600 mb-10 text-center lg:text-left">

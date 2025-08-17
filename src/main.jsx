@@ -13,7 +13,7 @@ const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC_KEY);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <div className="">
+    <div className="bg-[#fbfbfe]">
       <QueryClientProvider client={queryClient}>
         <AuthProvider>
           <Elements stripe={stripePromise}>

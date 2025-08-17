@@ -40,11 +40,11 @@ const PlatformStats = () => {
       <p className="text-gray-600 mb-10">
         See the impact we're making in the micro-tasking industry
       </p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 ">
         {stats.map((item, index) => (
           <div
             key={index}
-            className="p-6 border rounded-xl shadow-sm flex flex-col items-center"
+            className="p-6 border border-gray-200 rounded-xl shadow-sm flex flex-col items-center"
           >
             <div
               className="btn bg-gradient-to-r from-[#3192DF] to-[#16A352] text-white border-none hover:opacity-90 transition-all duration-300  p-2 rounded-full mb-4 w-15 h-15"

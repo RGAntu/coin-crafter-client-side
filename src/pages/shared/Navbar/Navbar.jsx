@@ -36,7 +36,9 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar bg-base-100 shadow-sm">
+    
+    <div className="bg-accent shadow-xl sticky top-0 z-50 ">
+      <div className="navbar max-w-7xl mx-auto   ">
       {/* Logo and Hamburger */}
       <div className="navbar-start">
         <div className="dropdown">
@@ -58,7 +60,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-10"
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 text-white rounded-box w-52 z-10"
           >
             {navItems}
           </ul>
@@ -71,7 +73,7 @@ const Navbar = () => {
 
       {/* Center Nav for large screen */}
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">{navItems}</ul>
+        <ul className="menu menu-horizontal text-white px-1">{navItems}</ul>
       </div>
 
       {/* Right End Section */}
@@ -111,14 +113,15 @@ const Navbar = () => {
 
         {/* Always Show */}
         <Link
-          href="https://github.com/Programming-Hero-Web-Course4/b11a12-client-side-RGAntu"
+          href="https://github.com/RGAntu/coin-crafter-client-side"
           target="_blank"
           rel="noopener noreferrer"
-          className="btn btn-outline hidden md:flex lg:flex items-center gap-2"
+          className="btn bg-primary text-white border-none hidden md:flex lg:flex items-center gap-2"
         >
           <FaGithub /> Join as Developer
         </Link>
       </div>
+    </div>
     </div>
   );
 };

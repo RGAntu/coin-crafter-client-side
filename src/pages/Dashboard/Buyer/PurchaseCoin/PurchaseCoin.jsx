@@ -22,7 +22,7 @@ const PurchaseCoin = () => {
         {coinPackages.map((pkg, index) => (
           <div
             key={index}
-            className="border rounded-lg p-6 text-center shadow hover:shadow-lg cursor-pointer bg-white"
+            className="border rounded-lg p-6 text-center shadow hover:shadow-lg cursor-pointer bg-blue-50"
             onClick={() => handleBuyNow(pkg.coins, pkg.price)}
           >
             <h3 className="text-xl font-bold mb-2">{pkg.coins} Coins</h3>
