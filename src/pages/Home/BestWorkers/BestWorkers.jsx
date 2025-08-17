@@ -25,7 +25,7 @@ const BestWorkers = () => {
         {workers.map((worker) => (
           <div
             key={worker._id}
-            className="flex flex-col items-center p-4 border rounded bg-green-50 shadow hover:shadow-lg transition"
+            className="flex flex-col items-center p-4 border border-gray-200 rounded-xl bg-white  shadow hover:shadow-lg transition"
           >
             <img
               src={worker.photo}

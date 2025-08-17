@@ -6,6 +6,7 @@ import PlatformStats from '../PlatformStats/PlatformStats';
 import FAQ from '../FAQ/FAQ';
 import HowItWorks from '../HowItWorks/HowItWorks';
 import BestWorkers from '../BestWorkers/BestWorkers';
+import JoinCommunity from '../JoinCommunity/JoinCommunity';
 
 const Home = () => {
     return (
@@ -17,6 +18,7 @@ const Home = () => {
             <WhyChoose></WhyChoose>
             <HowItWorks></HowItWorks>
             <PlatformStats></PlatformStats>
+            <JoinCommunity></JoinCommunity>
             <FAQ></FAQ>
             </div>
         </div>

@@ -22,6 +22,12 @@ const Navbar = () => {
       <li>
         <Link to="/">Home</Link>
       </li>
+      <li>
+        <Link to="/workers">For Workers</Link>
+      </li>
+      <li>
+        <Link to="/buyers">For Buyers</Link>
+      </li>
       {user && (
         <li>
           <Link to="/dashboard">Dashboard</Link>
@@ -32,12 +38,7 @@ const Navbar = () => {
           <Link to="/available-coin">Available Coin</Link>
         </li>
       )}
-      <li>
-        <Link to="/workers">For Workers</Link>
-      </li>
-      <li>
-        <Link to="/buyers">For Buyers</Link>
-      </li>
+      
     </>
   );
 
@@ -47,11 +48,11 @@ const Navbar = () => {
       <div className="navbar max-w-7xl mx-auto   ">
       {/* Logo and Hamburger */}
       <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+        <div className="dropdown ">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden  outline-1 ">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-5 w-5 text-white"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -66,7 +67,7 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 text-white rounded-box w-52 z-10"
+            className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-base-100 md:text-white lg:text-white rounded-box w-52 z-10"
           >
             {navItems}
           </ul>

@@ -58,7 +58,7 @@ const testimonials = [
 
 const TestimonialSlider = () => {
   return (
-    <div className="py-10 px-4 bg-white">
+    <div className="py-10 px-4">
       <div className="text-center space-y-5 py-8">
         <h1 className="text-4xl font-bold">What Our Community Says</h1>
         <p className="text-lg text-accent">
