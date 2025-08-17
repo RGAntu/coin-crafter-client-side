@@ -5,7 +5,7 @@ import { FaEarthAfrica } from "react-icons/fa6";
 import { AiOutlineFileProtect } from "react-icons/ai";
 import { GiProgression } from "react-icons/gi";
 
-const ForWorkers = () => {
+const WhyWork = () => {
   const features = [
     {
       icon: <FaMoneyCheck className="w-10 h-10 text-primary" />,
@@ -77,4 +77,4 @@ const ForWorkers = () => {
   );
 };
 
-export default ForWorkers;
+export default WhyWork;

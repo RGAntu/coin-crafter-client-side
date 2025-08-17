@@ -27,8 +27,9 @@ import ManageTasks from "../pages/Dashboard/Admin/ManageTasks/ManageTasks";
 import WorkerRoute from "../routes/WorkerRoute";
 import PrivateRoute from "../routes/PrivateRoute";
 import AvailableCoin from "../pages/AvailableCoin/AvailableCoin";
-import ForWorkers from "../pages/ForWorkers/ForWorkers";
+
 import ForBuyers from "../pages/ForBuyers/ForBuyers";
+import ForWorkerHome from "../pages/ForWorkers/ForWorkerHome/ForWorkerHome";
 
 
 
@@ -48,7 +49,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "workers",
-        element: <ForWorkers></ForWorkers>
+        element: <ForWorkerHome></ForWorkerHome>
       },
       {
         path: "buyers",
