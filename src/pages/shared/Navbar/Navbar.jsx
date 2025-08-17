@@ -32,6 +32,12 @@ const Navbar = () => {
           <Link to="/available-coin">Available Coin</Link>
         </li>
       )}
+      <li>
+        <Link to="/workers">For Workers</Link>
+      </li>
+      <li>
+        <Link to="/buyers">For Buyers</Link>
+      </li>
     </>
   );
 
