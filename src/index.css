@@ -7,3 +7,11 @@
   --color-secondary: #16A555;
   --color-accent: #101828;
 }
+.bg-gradient-main {
+  background: linear-gradient(to right, #06b6d4, #3b82f6);
+}
+.text-gradient-main {
+ background: -webkit-linear-gradient(#06b6d4, #3b82f6);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
