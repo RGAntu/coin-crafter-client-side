@@ -16,7 +16,6 @@ const Home = () => {
             <BestWorkers></BestWorkers>
             <TestimonialSlider></TestimonialSlider>
             <WhyChoose></WhyChoose>
-            <HowItWorks></HowItWorks>
             <PlatformStats></PlatformStats>
             <JoinCommunity></JoinCommunity>
             <FAQ></FAQ>

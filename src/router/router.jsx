@@ -31,6 +31,7 @@ import AvailableCoin from "../pages/AvailableCoin/AvailableCoin";
 
 import ForWorkerHome from "../pages/ForWorkers/ForWorkerHome/ForWorkerHome";
 import ForBuyersHome from "../pages/ForBuyers/ForBuyersHome/ForBuyersHome";
+import About from "../pages/About/About";
 
 
 
@@ -43,6 +44,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <Home></Home>,
+      },
+      {
+        path:"about",
+        element: <About></About>
       },
       {
         path: "available-coin",

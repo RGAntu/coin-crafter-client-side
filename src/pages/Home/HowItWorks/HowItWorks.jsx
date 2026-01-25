@@ -57,54 +57,108 @@ const steps = {
   ],
 };
 
-const StepCard = ({ step, index, color }) => (
-  <div
-    className={`relative flex items-start space-x-4 group hover:bg-${color}-50 hover:rounded-xl transition-all duration-300 p-2`}
-  >
-    {/* Numbered Circle */}
-    <div className="flex-shrink-0 z-10">
-      <div
-        className={`w-10 h-10 rounded-full bg-gradient-to-tr from-${color}-500 to-${color}-700 text-white flex items-center justify-center font-bold shadow-md border-4 border-white`}
-      >
-        {index + 1}
+// Color Map to solve Tailwind JIT dynamic class issues
+const colorStyles = {
+  blue: {
+    line: "bg-blue-200",
+    dot: "bg-blue-600",
+    light: "bg-blue-50",
+    text: "text-blue-600",
+    shadow: "shadow-blue-100",
+  },
+  green: {
+    line: "bg-green-200",
+    dot: "bg-green-600",
+    light: "bg-green-50",
+    text: "text-green-600",
+    shadow: "shadow-green-100",
+  },
+};
+
+const StepCard = ({ step, index, color, isLast }) => {
+  const style = colorStyles[color];
+
+  return (
+    <div className="relative flex group">
+      {/* Timeline Line Logic */}
+      {!isLast && (
+        <div
+          className={`absolute left-5 top-10 w-0.5 h-full ${style.line} z-0`}
+        />
+      )}
+
+      {/* Number/Icon Node */}
+      <div className="relative z-10 flex-shrink-0">
+        <div
+          className={`w-10 h-10 rounded-full ${style.dot} text-white flex items-center justify-center font-bold shadow-lg transform group-hover:scale-110 transition-transform duration-300`}
+        >
+          {index + 1}
+        </div>
+      </div>
+
+      {/* Content Card */}
+      <div className="ml-6 pb-10 w-full">
+        <div
+          className={`bg-white p-5 rounded-2xl border border-gray-100 shadow-sm ${style.shadow} group-hover:shadow-md transition-all duration-300`}
+        >
+          <div className={`text-2xl ${style.text} mb-3`}>{step.icon}</div>
+          <h4 className="text-xl font-bold text-gray-800 mb-2">{step.title}</h4>
+          <p className="text-gray-600 leading-relaxed">{step.text}</p>
+        </div>
       </div>
     </div>
-    {/* Icon and Text */}
-    <div
-      className={`bg-white p-4 rounded-xl shadow-sm border border-gray-200 w-full`}
-    >
-      <div className={`text-xl text-${color}-600 mb-1`}>{step.icon}</div>
-      <h4 className="text-lg font-semibold">{step.title}</h4>
-      <p className="text-gray-600 text-sm">{step.text}</p>
-    </div>
-  </div>
-);
+  );
+};
 
 const HowItWorks = () => {
   return (
-    <section className="py-20 px-4 sm:px-6 bg-gradient-to-b from-white via-gray-50 to-white">
-      <h2 className="text-4xl font-bold text-center mb-16">How it Works</h2>
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        {/* Workers */}
-        <div>
-          <h3 className="text-2xl font-bold text-blue-600 mb-10 text-center lg:text-left">
-            For Workers
-          </h3>
-          <div className="relative space-y-10 lg:before:absolute lg:before:left-5 lg:before:top-3 lg:before:bottom-0 lg:before:w-1 lg:before:bg-blue-100">
+    <section className="py-16 px-4 max-w-7xl mx-auto">
+      <div className="text-center mb-16">
+        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+          How it Works
+        </h2>
+        <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
+        {/* Workers Column */}
+        <div className="flex flex-col">
+          <div className="flex items-center space-x-4 mb-10 justify-center lg:justify-start">
+            <h3 className="text-3xl font-bold text-blue-600">For Workers</h3>
+            <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full uppercase tracking-wider">
+              Earn
+            </span>
+          </div>
+          <div className="flex flex-col">
             {steps.worker.map((step, i) => (
-              <StepCard key={i} step={step} index={i} color="blue" />
+              <StepCard
+                key={i}
+                step={step}
+                index={i}
+                color="blue"
+                isLast={i === steps.worker.length - 1}
+              />
             ))}
           </div>
         </div>
 
-        {/* Buyers */}
-        <div>
-          <h3 className="text-2xl font-bold text-green-600 mb-10 text-center lg:text-left">
-            For Buyers
-          </h3>
-          <div className="relative space-y-10 lg:before:absolute lg:before:left-5 lg:before:top-3 lg:before:bottom-0 lg:before:w-1 lg:before:bg-green-100 ">
+        {/* Buyers Column */}
+        <div className="flex flex-col">
+          <div className="flex items-center space-x-4 mb-10 justify-center lg:justify-start">
+            <h3 className="text-3xl font-bold text-green-600">For Buyers</h3>
+            <span className="px-3 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded-full uppercase tracking-wider">
+              Hire
+            </span>
+          </div>
+          <div className="flex flex-col">
             {steps.buyer.map((step, i) => (
-              <StepCard key={i} step={step} index={i} color="green" />
+              <StepCard
+                key={i}
+                step={step}
+                index={i}
+                color="green"
+                isLast={i === steps.buyer.length - 1}
+              />
             ))}
           </div>
         </div>
