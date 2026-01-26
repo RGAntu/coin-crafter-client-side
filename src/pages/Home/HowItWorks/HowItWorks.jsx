@@ -60,18 +60,20 @@ const steps = {
 // Color Map to solve Tailwind JIT dynamic class issues
 const colorStyles = {
   blue: {
-    line: "bg-blue-200",
-    dot: "bg-blue-600",
-    light: "bg-blue-50",
-    text: "text-blue-600",
-    shadow: "shadow-blue-100",
+    line: "bg-gradient-to-b from-cyan-400 to-blue-500", // Standard Tailwind gradient for the line
+    dot: "bg-gradient-main", // Your custom CSS gradient
+    light: "bg-cyan-50",
+    text: "text-gradient-main", // Your custom text gradient
+    shadow: "shadow-cyan-100",
+    border: "border-cyan-100"
   },
   green: {
-    line: "bg-green-200",
-    dot: "bg-green-600",
+    line: "bg-gradient-to-b from-green-400 to-emerald-500",
+    dot: "bg-green-600", // Keeping green standard or you can create a .bg-gradient-green
     light: "bg-green-50",
     text: "text-green-600",
     shadow: "shadow-green-100",
+    border: "border-green-100"
   },
 };
 
@@ -80,14 +82,14 @@ const StepCard = ({ step, index, color, isLast }) => {
 
   return (
     <div className="relative flex group">
-      {/* Timeline Line Logic */}
+      {/* Timeline Line */}
       {!isLast && (
         <div
-          className={`absolute left-5 top-10 w-0.5 h-full ${style.line} z-0`}
+          className={`absolute left-5 top-10 w-0.5 h-full ${style.line} z-0 opacity-50`}
         />
       )}
 
-      {/* Number/Icon Node */}
+      {/* Number Node with Custom Gradient */}
       <div className="relative z-10 flex-shrink-0">
         <div
           className={`w-10 h-10 rounded-full ${style.dot} text-white flex items-center justify-center font-bold shadow-lg transform group-hover:scale-110 transition-transform duration-300`}
@@ -99,10 +101,18 @@ const StepCard = ({ step, index, color, isLast }) => {
       {/* Content Card */}
       <div className="ml-6 pb-10 w-full">
         <div
-          className={`bg-white p-5 rounded-2xl border border-gray-100 shadow-sm ${style.shadow} group-hover:shadow-md transition-all duration-300`}
+          className={`bg-white p-5 rounded-2xl border ${style.border} shadow-sm ${style.shadow} group-hover:shadow-md transition-all duration-300`}
         >
-          <div className={`text-2xl ${style.text} mb-3`}>{step.icon}</div>
-          <h4 className="text-xl font-bold text-gray-800 mb-2">{step.title}</h4>
+          {/* Icon with potential gradient */}
+          <div className={`text-2xl ${style.text} mb-3 inline-block`}>
+            {step.icon}
+          </div>
+          
+          {/* Title with Custom Text Gradient */}
+          <h4 className={`text-xl font-bold mb-2 ${style.text}`}>
+            {step.title}
+          </h4>
+          
           <p className="text-gray-600 leading-relaxed">{step.text}</p>
         </div>
       </div>
