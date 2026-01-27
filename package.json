@@ -20,6 +20,7 @@
     "flowbite": "^3.1.2",
     "lottie-react": "^2.4.1",
     "lucide-react": "^0.525.0",
+    "motion": "^12.29.2",
     "react": "^19.1.0",
     "react-animated-text": "^0.1.4",
     "react-countup": "^6.5.3",

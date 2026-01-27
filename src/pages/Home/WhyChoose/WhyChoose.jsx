@@ -1,39 +1,40 @@
 import React from "react";
 import { ShieldCheck, Clock, Zap, Users, Timer, Headset } from "lucide-react";
+import { motion } from "motion/react"
 
 const features = [
   {
-    icon: <ShieldCheck className="w-10 h-10 text-primary" />,
+    icon: <ShieldCheck className="w-10 h-10" />,
     title: "Secure Payments",
     description:
       "All transactions are protected with bank-level security. Get paid safely and on time.",
   },
   {
-    icon: <Clock className="w-10 h-10 text-primary" />,
+    icon: <Clock className="w-10 h-10 " />,
     title: "Flexible Schedule",
     description:
       "Work whenever you want, wherever you are. No fixed hours, complete freedom.",
   },
   {
-    icon: <Zap className="w-10 h-10 text-primary" />,
+    icon: <Zap className="w-10 h-10" />,
     title: "Instant Earnings",
     description:
       "Get paid immediately after task completion. No waiting periods or delays.",
   },
   {
-    icon: <Users className="w-10 h-10 text-primary" />,
+    icon: <Users className="w-10 h-10" />,
     title: "Verified Community",
     description:
       "Join a trusted network of verified workers and buyers from around the world.",
   },
   {
-    icon: <Timer className="w-10 h-10 text-primary" />,
+    icon: <Timer className="w-10 h-10" />,
     title: "Quick Tasks",
     description:
       "Most tasks can be completed in minutes. Start earning without any experience.",
   },
   {
-    icon: <Headset className="w-10 h-10 text-primary" />,
+    icon: <Headset className="w-10 h-10 " />,
     title: "24/7 Support",
     description:
       "Our dedicated support team is always here to help you succeed.",
@@ -55,19 +56,20 @@ const WhyChoose = () => {
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3  ">
         {features.map((feature, index) => (
-          <div
+          <motion.div
+          whileHover={{ scale: 1.1 }}
+  whileTap={{ scale: 0.95 }}
+  onHoverStart={() => console.log('hover started!')}
             key={index}
-            className="p-6 border rounded-2xl shadow-sm hover:shadow-md  bg-gradient-to-r from-[#cee2f3] to-[#cff8e1] text-white hover:opacity-90 transition-all duration-300"
-            style={{
-              backgroundImage: "linear-gradient(to right, #cee2f3, #cff8e1)",
-            }}
+            className="p-6 border rounded-2xl shadow-sm hover:shadow-md text-white hover:opacity-90 transition-all duration-300"
+            
           >
-            <div className="mb-4">{feature.icon}</div>
+            <div className="mb-4 bg-gradient-main p-3 w-1/5  rounded-lg">{feature.icon}</div>
             <h3 className="text-xl font-semibold text-gray-800 mb-2">
               {feature.title}
             </h3>
             <p className="text-gray-600">{feature.description}</p>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

@@ -10,9 +10,9 @@ const GetStart = () => {
         <br /> micro-tasking needs.
       </p>
 
-      <div>
+      <div className="mt-5">
         <Link to="/register">
-          <button className="btn bg-accent hover:bg-gradient-main border-none text-white font-semibold px-6 py-6 rounded-lg shadow-md hover:scale-105 transition duration-300">
+          <button className="btn bg-gradient-main border-bg-gradient-main text-white font-semibold px-6 py-6 rounded-lg shadow-md hover:scale-105 transition duration-300">
             Sign Up As Your Role
           </button>
         </Link>
