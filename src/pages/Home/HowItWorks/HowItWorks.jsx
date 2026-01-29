@@ -1,4 +1,5 @@
 import React from "react";
+import "../../../index.css";
 import {
   FaBriefcase,
   FaClipboardList,
@@ -9,6 +10,7 @@ import {
   FaUserPlus,
   FaWallet,
 } from "react-icons/fa";
+
 
 const steps = {
   worker: [
@@ -155,7 +157,7 @@ const HowItWorks = () => {
         {/* Buyers Column */}
         <div className="flex flex-col">
           <div className="flex items-center space-x-4 mb-10 justify-center lg:justify-start">
-            <h3 className="text-3xl font-bold text-green-600">For Buyers</h3>
+            <h3 className="text-3xl font-bold color-primary">For Buyers</h3>
             <span className="px-3 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded-full uppercase tracking-wider">
               Hire
             </span>

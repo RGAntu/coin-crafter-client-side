@@ -3,15 +3,17 @@
 @import "flowbite";
 
 :root {
-  --color-primary: #3C83F6;
-  --color-secondary: #06b6d4;
-  --color-accent: #101828;
+  --color-primary: #2688d9;
+  --color-secondary: #18167e;
+  --color-accent: #010304;
+  --color-text: #dcecf9;
 }
 .bg-gradient-main {
-  background: linear-gradient(to right, #06b6d4, #3b82f6);
+  background: linear-gradient(to right, #2688d9, #18167e);
 }
 .text-gradient-main {
  background: -webkit-linear-gradient(#06b6d4, #3b82f6);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
