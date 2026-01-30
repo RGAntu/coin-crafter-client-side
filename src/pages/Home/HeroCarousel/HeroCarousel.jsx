@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+// import React, { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
@@ -8,64 +9,69 @@ import Lottie from "lottie-react";
 const HeroCarousel = () => {
   const slides = [
     {
-      title: "Unlock Your Earning Potential",
-      description:
-        "Join thousands of users completing simple tasks and earning real money. Your next gig is just a click away.",
+      title: "Earn Money with Simple Tasks",
+      subTitle: "Complete micro-tasks and get paid instantly.",
+      description: " Join thousands of workers earning money by completing simple online tasks. No Experience Needed!",
+      
       lottiePath: "/Finance.json",
-      buttonText: "Start Earning",
+      buttonText: "Start Earning Now",
     },
     {
-      title: "Turn Free Time Into Income",
+      title: "Post Tasks, Get Results",
+      subTitle: "Outsource your work to skilled professionals",
       description:
-        "Get paid for everyday activities. Choose the tasks you love and get rewarded instantly.",
+        "Get yours tasks completed quickly and efficiently by our verified worker community.",
       lottiePath: "/money_lottie.json",
-      buttonText: "Get Started",
+      buttonText: "Post Your First Task",
     },
     {
-      title: "Flexible Work, Real Rewards",
+      title: "Trusted by Thousands",
+      subTitle: "Join the leading coin-crafter platform",
       description:
-        "Work on your terms. Whether part-time or full-time, there’s a task waiting for you.",
+        "Secure payments, verified users, and 24/7 support make us the top choice for micro-work .",
       lottiePath: "/Business Analytics.json",
-      buttonText: "Browse Tasks",
+      buttonText: "Join the Community",
     },
   ];
 
-  const [animations, setAnimations] = useState([]);
+  // const [animations, setAnimations] = useState([]);
 
   // Fetch all Lottie files
-  useEffect(() => {
-    Promise.all(
-      slides.map((slide) =>
-        fetch(slide.lottiePath)
-          .then((res) => res.json())
-          .catch(() => null)
-      )
-    ).then(setAnimations);
-  }, []);
+  // useEffect(() => {
+  //   Promise.all(
+  //     slides.map((slide) =>
+  //       fetch(slide.lottiePath)
+  //         .then((res) => res.json())
+  //         .catch(() => null)
+  //     )
+  //   ).then(setAnimations);
+  // }, []);
+
+
   return (
     <div
       className="p-6 border rounded-b-xl shadow-sm hover:shadow-md 
-             bg-gradient-to-r from-blue-500 to-teal-400 
-             text-white hover:opacity-90 transition-all duration-300"
-      style={{
-        backgroundImage: "linear-gradient(to right, #3b82f6, #14b8a6)",
-      }}
+             bg-gradient-main 
+             text-white text-center transition-all duration-300 space-y-5"
+  
     >
       <Swiper
         navigation
         modules={[Navigation, Autoplay]}
-        autoplay={{ delay: 4000 }}
+        autoplay={{ delay: 5000 }}
+        
         loop
       >
         {slides.map((slide, index) => (
           <SwiperSlide key={index}>
-            <div className="max-w-7xl mx-auto px-4 flex flex-col lg:flex-row items-center justify-between gap-10 min-h-[70vh]">
+            <div className="max-w-7xl mx-auto px-2 flex md:flex-col lg:flex-row items-center justify-between gap-10 min-h-[70vh]">
               {/* Left Content */}
-              <div className="text-white flex-1 space-y-4">
-                <h1 className="text-white text-3xl md:text-5xl lg:text-10xl font-bold">
+              <div className=" flex-1 space-y-4">
+                <h1 className="text-white lg:text-7xl font-bold">
                   {slide.title}
                 </h1>
-                <p className="text-base md:text-lg text-accent">
+                <h2 className="sm:text-xl md:text-2xl lg:text-2xl">{slide.subTitle}</h2>
+                <p className="text-base md:text-md lg:text-lg text-accent">
                   {slide.description}
                 </p>
                 <button className="bg-white text-secondary font-semibold px-5 py-2 rounded hover:bg-blue-100 transition">
@@ -74,7 +80,7 @@ const HeroCarousel = () => {
               </div>
 
               {/* Right Animation */}
-              <div className="flex-1">
+              {/* <div className="flex-1">
                 {animations[index] ? (
                   <Lottie
                     animationData={animations[index]}
@@ -85,7 +91,7 @@ const HeroCarousel = () => {
                 ) : (
                   <p className="text-gray-700">Loading animation...</p>
                 )}
-              </div>
+              </div> */}
             </div>
           </SwiperSlide>
         ))}

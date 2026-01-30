@@ -1,10 +1,14 @@
 import React from "react";
-import { motion } from "motion/react";
+import {motion} from "motion/react";
 
 const AboutCoin = () => {
+
+  
   return (
     <div className="text-center justify-between py-30 bg-gradient-main text-white">
+      
         <motion.button
+        
           style={{
             width: 150,
             height: 150,
