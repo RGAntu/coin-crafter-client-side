@@ -12,7 +12,7 @@
   background: linear-gradient(to right, #2688d9, #18167e);
 }
 .text-gradient-main {
- background: -webkit-linear-gradient(#06b6d4, #3b82f6);
+ background: -webkit-linear-gradient(#18167e, #2688d9);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
