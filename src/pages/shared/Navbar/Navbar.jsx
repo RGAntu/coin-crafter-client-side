@@ -111,10 +111,7 @@ const Navbar = () => {
             </div>
             <button
               onClick={handleLogout}
-              className="btn bg-gradient-to-r from-[#3192DF] to-[#16A352] text-white border-none hover:opacity-90 transition-all duration-300"
-              style={{
-                backgroundImage: "linear-gradient(to right, #3192DF, #16A352)",
-              }}
+              className="btn bg-gradient-main text-white border-none hover:opacity-90 transition-all duration-300"
             >
               Logout
             </button>

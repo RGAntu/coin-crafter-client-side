@@ -13,13 +13,13 @@ const JoinCommunity = () => {
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
           <Link to="/register">
-            <button className="btn w-64 md:w-auto text-white bg-gradient-to-r from-blue-500 to-teal-400 border-none hover:from-blue-600 hover:to-teal-500 transition-all duration-300">
+            <button className="btn w-64 md:w-auto text-white bg-gradient-main border-none transition-all duration-300">
               Start as Worker
             </button>
           </Link>
 
           <Link to="/register">
-            <button className="btn btn-outline btn-primary w-64 md:w-auto border-2 transition-all duration-300 hover:bg-blue-500 hover:text-white">
+            <button className="btn btn-outline btn-primary w-64 md:w-auto border-2 transition-all duration-300 hover:bg-gradient- hover:text-white">
               Post Tasks as Buyer
             </button>
           </Link>

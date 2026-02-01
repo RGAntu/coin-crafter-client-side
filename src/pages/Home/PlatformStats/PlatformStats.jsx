@@ -47,10 +47,8 @@ const PlatformStats = () => {
             className="p-6 border border-gray-200 rounded-xl shadow-sm flex flex-col items-center"
           >
             <div
-              className="btn bg-gradient-to-r from-[#3192DF] to-[#16A352] text-white border-none hover:opacity-90 transition-all duration-300  p-2 rounded-full mb-4 w-15 h-15"
-              style={{
-                backgroundImage: "linear-gradient(to right, #3192DF, #16A352)",
-              }}
+              className="btn bg-gradient-main text-white border-none hover:opacity-90 transition-all duration-300  p-2 rounded-full mb-4 w-15 h-15"
+              
             >
               {item.icon}
             </div>
@@ -63,7 +61,7 @@ const PlatformStats = () => {
                 separator=","
               />
             </h3>
-            <h4 className="text-lg font-semibold text-black mt-2">
+            <h4 className="text-lg font-semibold color-accent mt-2">
               {item.title}
             </h4>
             <p className="text-sm text-accent mt-1">{item.description}</p>

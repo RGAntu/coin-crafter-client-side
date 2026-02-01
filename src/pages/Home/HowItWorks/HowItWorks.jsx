@@ -70,10 +70,10 @@ const colorStyles = {
     border: "border-cyan-100"
   },
   green: {
-    line: "bg-gradient-to-b from-green-400 to-emerald-500",
-    dot: "bg-green-600", // Keeping green standard or you can create a .bg-gradient-green
-    light: "bg-green-50",
-    text: "text-green-600",
+    line: "bg-gradient-main",
+    dot: "bg-gradient-main", // Keeping green standard or you can create a .bg-gradient-green
+    light: "bg-gradient-main",
+    text: "text-gradient-main",
     shadow: "shadow-green-100",
     border: "border-green-100"
   },
@@ -126,7 +126,7 @@ const HowItWorks = () => {
   return (
     <section className="py-16 px-4 max-w-7xl mx-auto">
       <div className="text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
+        <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 mb-4">
           How it Works
         </h2>
         <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
@@ -158,7 +158,7 @@ const HowItWorks = () => {
         <div className="flex flex-col">
           <div className="flex items-center space-x-4 mb-10 justify-center lg:justify-start">
             <h3 className="text-3xl font-bold color-primary">For Buyers</h3>
-            <span className="px-3 py-1 bg-green-100 text-green-700 text-sm font-semibold rounded-full uppercase tracking-wider">
+            <span className="px-3 py-1 bg-green-100 text-primary text-sm font-semibold rounded-full uppercase tracking-wider">
               Hire
             </span>
           </div>
