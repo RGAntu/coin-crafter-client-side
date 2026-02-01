@@ -3,7 +3,7 @@ import { Link } from 'react-router';
 
 const BuyerBanner = () => {
     return (
-        <div className="bg-gradient-to-r from-blue-500 to-teal-400 py-20">
+        <div className="bg-gradient-main py-20">
       <div className="max-w-7xl mx-auto px-6 lg:flex items-center justify-between">
         
         {/* Left Content */}
@@ -18,7 +18,7 @@ const BuyerBanner = () => {
           {/* Buttons */}
           <div className="mt-6 flex gap-4">
             <Link to="/register">
-              <button className="btn bg-accent border-none text-white px-6 hover:bg-secondary">
+              <button className="btn bg-color-accent border-none color-accent px-6 hover:bg-secondary hover:text-white">
                 Sign Up Now
               </button>
             </Link>
