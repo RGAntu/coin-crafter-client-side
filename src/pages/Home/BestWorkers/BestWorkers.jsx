@@ -2,6 +2,7 @@ import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { GrTrophy } from "react-icons/gr";
+import Loading from "../../shared/Loading/Loading.jsx";
 
 const BestWorkers = () => {
   const axiosSecure = useAxiosSecure();
@@ -18,7 +19,7 @@ const BestWorkers = () => {
     },
   });
 
-  if (isLoading) return <p>Loading top workers...</p>;
+  if (isLoading) return <Loading></Loading>;
   if (isError) return <p>Error loading top workers.</p>;
 
   return (

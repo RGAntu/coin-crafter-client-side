@@ -36,11 +36,11 @@ const Navbar = () => {
           <Link to="/dashboard">Dashboard</Link>
         </li>
       )}
-      {user && (
+      {/* {user && (
         <li>
           <Link to="/available-coin">Available Coin</Link>
         </li>
-      )}
+      )} */}
       
     </>
   );
