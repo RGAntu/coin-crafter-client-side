@@ -14,7 +14,7 @@ const AboutCoin = () => {
           md:top-[100px] md:left-[30px] 
           md:w-[150px] md:h-[150px]
           rounded-full 
-          border-4 border-[#18167e]
+          border-4 border-[#2688d9]
         "
         animate={{ rotate: 180 }}
         transition={{ duration: 3, repeat: Infinity, ease: "linear" }}

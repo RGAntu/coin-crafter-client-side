@@ -129,15 +129,15 @@ const HowItWorks = () => {
         <h2 className="text-4xl md:text-4xl font-extrabold text-gray-900 mb-4">
           How it Works
         </h2>
-        <div className="h-1.5 w-24 bg-blue-600 mx-auto rounded-full"></div>
+        <div className="h-1.5 w-24 bg-gradient-main mx-auto rounded-full"></div>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-24">
         {/* Workers Column */}
         <div className="flex flex-col">
           <div className="flex items-center space-x-4 mb-10 justify-center lg:justify-start">
-            <h3 className="text-3xl font-bold text-blue-600">For Workers</h3>
-            <span className="px-3 py-1 bg-blue-100 text-blue-700 text-sm font-semibold rounded-full uppercase tracking-wider">
+            <h3 className="text-3xl font-bold">For Workers</h3>
+            <span className="px-3 py-1 bg-gradient-main text-white  text-sm font-semibold rounded-full uppercase tracking-wider">
               Earn
             </span>
           </div>
@@ -158,7 +158,7 @@ const HowItWorks = () => {
         <div className="flex flex-col">
           <div className="flex items-center space-x-4 mb-10 justify-center lg:justify-start">
             <h3 className="text-3xl font-bold color-primary">For Buyers</h3>
-            <span className="px-3 py-1 bg-green-100 text-primary text-sm font-semibold rounded-full uppercase tracking-wider">
+            <span className="px-3 py-1 bg-gradient-main text-white text-sm font-semibold rounded-full uppercase tracking-wider">
               Hire
             </span>
           </div>
