@@ -168,7 +168,7 @@ const Register = () => {
               <p className="text-red-500">{errors.role.message}</p>
             )}
 
-            <button type="submit" className="btn btn-primary mt-4">
+            <button type="submit" className="btn bg-gradient-main text-white mt-4">
               Register
             </button>
           </fieldset>
